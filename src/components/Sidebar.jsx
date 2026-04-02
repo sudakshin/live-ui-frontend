@@ -36,26 +36,7 @@ export default function Sidebar() {
 
               </div>
 
-              {/* {ch.is_live &&
-                ch.live_urls.slice(0, 6).map((url, idx) => {
 
-                  const selected = active.includes(url)
-
-                  return (
-                    <button
-                      key={idx}
-                      onClick={() => toggleStream(url)}
-                      className={`block ml-4 text-xs px-2 py-1 rounded mt-1
-                        ${
-                          selected
-                            ? "bg-green-500 text-black"
-                            : "bg-gray-800 hover:bg-gray-700"
-                        }`}
-                    >
-                      Stream {idx + 1}
-                    </button>
-                  )
-                })} */}
               {ch.is_live &&
                 ch.live_urls.map((id, idx) => {
 

@@ -2,23 +2,6 @@ import Sidebar from "./components/Sidebar"
 import StreamGrid from "./components/StreamGrid"
 import useLiveStreams from "./hooks/useLiveStreams"
 
-// export default function App() {
-
-//   useLiveStreams()
-
-//   return (
-//     <div className="flex bg-gray-900 text-white">
-
-//       <Sidebar />
-
-//       <div className="flex-1">
-//         <StreamGrid />
-//       </div>
-
-//     </div>
-//   )
-// }
-
 
 export default function App() {
   useLiveStreams()
