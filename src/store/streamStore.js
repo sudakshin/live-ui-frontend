@@ -1,13 +1,13 @@
-
-
-
 import { create } from "zustand"
 
 export const useStreamStore = create((set) => ({
   channels: [],
   activeStreams: [],
+  layout: 3, // default columns
 
   setChannels: (channels) => set({ channels }),
+
+  setLayout: (cols) => set({ layout: cols }),
 
   toggleStream: (id) =>
     set((state) => {
