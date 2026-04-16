@@ -16,7 +16,8 @@ export default function Sidebar() {
 
       <div className="p-3 space-y-4">
 
-        {channels.map((ch, i) => {
+        {/* {channels.map((ch, i) => { */}
+        {[...channels.filter(c => c.is_live), ...channels.filter(c => !c.is_live)].map((ch, i) => {
 
           const name = extractChannelName(ch.channel)
 
@@ -38,7 +39,8 @@ export default function Sidebar() {
 
 
               {ch.is_live &&
-                ch.live_urls.map((id, idx) => {
+                // ch.live_urls.map((id, idx) => {
+                  ch.live_urls.slice(0, 6).map((id, idx) => {
 
                   const selected = active.includes(id)
 

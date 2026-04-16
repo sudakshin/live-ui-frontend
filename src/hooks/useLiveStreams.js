@@ -1,9 +1,6 @@
-
-
-
+import { useStreamStore } from "../store/streamStore"
 import { useEffect } from "react"
 import { fetchStreams } from "../services/api"
-import { useStreamStore } from "../store/streamStore"
 
 export default function useLiveStreams() {
 
@@ -16,6 +13,17 @@ export default function useLiveStreams() {
       console.log("API RESPONSE:", data)
 
       setChannels(data.data.results)
+
+      // /////////////////
+      const store = useStreamStore.getState()
+
+const firstStreams = results
+  .filter(c => c.is_live)
+  .flatMap(c => c.live_urls)
+  .slice(0, 6)
+
+store.activeStreams = firstStreams
+
 
     } catch (e) {
       console.error("API ERROR", e)
